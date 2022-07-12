@@ -3,6 +3,7 @@ import db from "./config/Databse.js";
 import router from "./routes/Auth.js";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 dotenv.config();
 
@@ -11,11 +12,12 @@ const app = express();
 
 try {
   await db.authenticate();
-  console.log("databse running");
+  console.log("database running...");
 } catch (error) {
   console.log(error);
 }
 // Middleware
+app.use(cors({ credentials: true, origin: "*" }));
 app.use(cookieParser());
 app.use(express.json());
 app.use(router);
