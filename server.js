@@ -1,8 +1,11 @@
 import express from "express";
 import db from "./config/Databse.js";
-import router from "./routes/index.js";
+import router from "./routes/Auth.js";
 import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
+
 dotenv.config();
+
 const PORT = 5000;
 const app = express();
 
@@ -12,7 +15,8 @@ try {
 } catch (error) {
   console.log(error);
 }
-
+// Middleware
+app.use(cookieParser());
 app.use(express.json());
 app.use(router);
 

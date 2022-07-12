@@ -16,3 +16,14 @@ Content-Type: application/json
     "email" : "diditamin.m@gmail.com",
     "password" : "diditdidit12"
 }
+
+###
+GET http://localhost:5000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJkZHRhbW4iLCJlbWFpbCI6ImRpZGl0YW1pbi5tQGdtYWlsLmNvbSIsImlhdCI6MTY1NzYzOTQ3MywiZXhwIjoxNjU3NjM5NDg4fQ.F9KbBU-H8n7U9ueS-GlDempFU3kkgbMQjplyNGbp1Xg
+
+
+###
+GET http://localhost:5000/token
+
+###
+DELETE http://localhost:5000/logout
